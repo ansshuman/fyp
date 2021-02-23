@@ -1,3 +1,4 @@
+Make sure you have Matlabs Image Processing toolbox installed.
 When running for first time run make.m and then run install.m
 Also do the same whenever restarting Matlab.
 
