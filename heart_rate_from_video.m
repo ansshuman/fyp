@@ -30,4 +30,3 @@ magnifiedFile = amplify_spatial_Gdown_temporal_ideal(inFile,resultsDir,50,4, ...
 process(signalBrightnessAvg, frameRate);
 
 %% Demo GUI
-play_movies_together(1, 2, 30)
