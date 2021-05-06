@@ -16,25 +16,18 @@ inFile = fullfile(dataDir,'face.mp4');
 
 %% Spatial filtering
 fprintf('Processing %s\n', inFile);
-amplify_spatial_Gdown_temporal_ideal(inFile,resultsDir,50,4, ...
-                     65/60,80/60,30, 1);
+magnifiedFile = amplify_spatial_Gdown_temporal_ideal(inFile,resultsDir,50,4, ...
+                     50/60,60/60,30, 1);
  
 
-%% Read color magnified video
-inFile = fullfile(resultsDir, 'face-ideal-from-1.0833-to-1.3333-alpha-50-level-4-chromAtn-1.avi');
-vid = VideoReader(inFile);
-% Extract video info
-vidHeight = vid.Height;
-vidWidth = vid.Width;
-nChannels = 3;
-fr = vid.FrameRate;
-len = vid.NumFrames;
+
 
 %% Computing the red brightness signal
-signalBrightnessAvg = acquire(inFile);
+% second parmeter in acquire is the percentage of total length and width to be used for demarcating the central area used for analysing video 
+[signalBrightnessAvg, frameRate] = acquire(magnifiedFile, 20);
 
 %% Calculate heart rate
-process(signalBrightnessAvg, vid.FrameRate);
+process(signalBrightnessAvg, frameRate);
 
 %% Demo GUI
-
+play_movies_together(1, 2, 30)

@@ -5,8 +5,8 @@ function play_movies_together(movie1_title,movie2_title,m1_heading,m2_heading,di
 % Initialize the video reader.
 %t_file = strcat(dir,movie1_title);
 %t_file2 = strcat(dir,movie2_title);
-videoSrc = vision.VideoFileReader('/home/muskan/Downloads/EVM_Matlab-1.1/EVM_Matlab/tests/face.mp4', 'ImageColorSpace', 'Intensity');
-videoSrc2 = vision.VideoFileReader('/home/muskan/Downloads/EVM_Matlab-1.1/EVM_Matlab/tests/face-ideal-from-1.0833-to-1.3333-alpha-50-level-4-chromAtn-1.avi', 'ImageColorSpace', 'Intensity');
+videoSrc = vision.VideoFileReader('./tests/face.mp4', 'ImageColorSpace', 'Intensity');
+videoSrc2 = vision.VideoFileReader('./results/face-ideal-from-0.83333-to-1-alpha-50-level-4-chromAtn-1.avi', 'ImageColorSpace', 'Intensity');
 
 %% 
 % Create a figure window and two axes to display the input video and the
