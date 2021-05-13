@@ -9,7 +9,7 @@
  
  
  %% input Video
- inFile = fullfile(dataDir,'yash_73.mp4');
+ inFile = fullfile(dataDir,'face.mp4');
 
  
  %% Spatial filtering
