@@ -31,10 +31,11 @@ function [brightness, frameRate] = acquire(video_file, percentArea)
     sampleHor = centerHorMax - centerHorMin;
     sampleVer = centerVerMax - centerVerMin;
     
+    disp(['Processing frames'])
     % make 1D array of ROI averages
     brightness = zeros(1, numFrames);
     for i=1:numFrames
-        display(['Processing ' num2str(i) '/' num2str(numFrames)]);
+        %display(['Processing ' num2str(i) '/' num2str(numFrames)]);
         frame = read(video, i);
         greenPlane = zeros(sampleVer, sampleHor);
         for j = centerHorMin : centerHorMax

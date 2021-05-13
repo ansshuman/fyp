@@ -1,24 +1,21 @@
-% heart_rate_from_video.m
-clear all;
-clc;
-% make;
-% install;
-
-
-dataDir = './tests';
-resultsDir = 'results';
-% mkdir(resultsDir);
-
-
-%% input Video
-inFile = fullfile(dataDir,'face.mp4');
-
-
-%% Spatial filtering
-fprintf('Processing %s\n', inFile);
-magnifiedFile = amplify_spatial_Gdown_temporal_ideal(inFile,resultsDir,50,4, ...
-                     50/60,60/60,30, 1);
+ % heart_rate_from_video.m
+ clear all;
+ clc;
+ % make;
+ % install;
+ dataDir = './tests';
+ resultsDir = 'results';
+ % mkdir(resultsDir);
  
+ 
+ %% input Video
+ inFile = fullfile(dataDir,'yash_73.mp4');
+
+ 
+ %% Spatial filtering
+ fprintf('Processing %s\n', inFile);
+ magnifiedFile = amplify_spatial_Gdown_temporal_ideal(inFile,resultsDir,100,4, ...
+                      40/60, 240/60, 30, 0);
 
 
 
@@ -30,3 +27,4 @@ magnifiedFile = amplify_spatial_Gdown_temporal_ideal(inFile,resultsDir,50,4, ...
 process(signalBrightnessAvg, frameRate);
 
 %% Demo GUI
+disp_result(inFile, magnifiedFile)
